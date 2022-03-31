@@ -1,0 +1,13 @@
+﻿@model Assignment3.Models.Classes
+@{
+    ViewBag.Title = "show";
+}
+
+<a class="navlink" href="/Classes/List">Back To Classes List</a>
+<div id="containershow">
+    <h3>@Model.className</h3>
+    <!-- Trying to get detail teacher id-->
+    <p>Teacher: <a href="/Teacher/Show/@Model.teacherID">@Model.teachername</a></p>
+    <p> Start Date: @Model.startClass.ToString("yyyy-MM-dd")</p>
+    <p> End Date: @Model.endClass.ToString("yyyy-MM-dd")</p>
+</div>

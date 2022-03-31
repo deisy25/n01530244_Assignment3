@@ -1,0 +1,22 @@
+﻿@model Assignment3.Models.Teacher
+
+@{
+    ViewBag.Title = "Show";
+
+}
+
+<a class="navlink" href="/Teacher/List">Back To Teachers List</a>
+<div id="containershow">
+    <h3>@Model.teacherFName @Model.teacherLName</h3>
+    <p>Employee #: @Model.teacherNumber</p>
+    <p> Hire Date: @Model.teacherHire.ToString("yyyy-MM-dd")</p>
+    <p>Salary: @Model.teacherSalary</p>
+
+    <b>Courses Taught</b>
+    <!-- this is just show the last data from the table
+        for example, for teacherID 2, it should be has 2 data, it shows the last data only
+        and shows error when no courses
+    -->
+    <p><a href="/Classes/show/@Model.classId">@Model.className</a></p>
+
+</div>

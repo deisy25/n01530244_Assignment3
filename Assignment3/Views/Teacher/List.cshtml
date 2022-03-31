@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Assignment3.Models.Teacher>
+
+@{
+    ViewBag.Title = "List";
+}
+
+
+<div id="containerlist">
+    <a href="/Home/Index">Back to Main Menu</a>
+    <h3>List of Teachers</h3>
+    <p>There are @Model.Count() teachers in the system</p>
+
+    
+    <form action="/Teacher/List" method="GET">
+        <select id="searchOptions">
+            <option>Name</option>
+            <option>Salary</option>
+            <option>Hire Date</option>
+        </select>
+        <input type="text" name="SearchKey" autocomplete="off" />
+        <input type="submit" value="Search">
+
+    </form>
+
+    @foreach (var teacher in Model)
+    {
+        <div>
+            <a href="/Teacher/Show/@teacher.teacherId">@teacher.teacherFName @teacher.teacherLName </a>
+
+        </div>
+    }
+</div>
